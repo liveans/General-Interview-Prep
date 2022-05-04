@@ -25,6 +25,8 @@ void test_func(Func func, std::string_view func_name,
   os << '\n';
 }
 
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 std::string urlify_str(std::pair<std::string, int> pair) {
   auto &str = pair.first;
   int last_idx = str.size() - 1;

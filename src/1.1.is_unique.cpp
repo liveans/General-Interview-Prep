@@ -13,6 +13,8 @@ std::string unique{"badcfehg"};
 std::string not_unique{"bbaaccdd"};
 std::string not_unique_one_char{"bacdeef"};
 
+// Time complexity O(n^2)
+// Space complexity O(1)
 template <typename Iter>
 bool is_unique_with_brute_force(Iter begin, Iter end) {
     for(; begin != end; ++begin) {
@@ -25,6 +27,8 @@ bool is_unique_with_brute_force(Iter begin, Iter end) {
     return true;
 }
 
+// Time complexity O(n)
+// Space complexity O(n)
 template <typename Iter>
 bool is_unique_alg_with_hash_table(Iter begin, Iter end) {
     std::unordered_set<typename Iter::value_type> temp{};
@@ -37,6 +41,8 @@ bool is_unique_alg_with_hash_table(Iter begin, Iter end) {
     return true;
 }
 
+// Time complexity O(n)
+// Space complexity O(1)
 bool is_unique_string_with_bit_manip_with_bitset(std::string_view str) {
     std::bitset<26> bits{};
     // Assume all lowercase
@@ -49,6 +55,8 @@ bool is_unique_string_with_bit_manip_with_bitset(std::string_view str) {
     return true;
 }
 
+// Time complexity O(n)
+// Space complexity O(1)
 bool is_unique_string_with_bit_manip_with_four_byte_int(std::string_view str) {
     std::uint32_t temp{};
     // Assume all lowercase

@@ -39,11 +39,15 @@ std::unordered_set<std::string> get_permutations(std::string s) {
     return permutations;
 }
 
+// Time complexity O(n! * n)
+// Space complexity O(n!)
 bool check_permutation_brute_force(std::string original, std::string check_str) {
     auto permutations{get_permutations(original)};
     return permutations.find(check_str) != permutations.end();
 }
 
+// Time complexity O(n)
+// Space complexity O(n)
 bool check_permutation_with_character_check(std::string original, std::string check_str) {
     if(original.size() != check_str.size()) return false;
 
@@ -58,6 +62,8 @@ bool check_permutation_with_character_check(std::string original, std::string ch
     return true;
 }
 
+// Time complexity O(n)
+// Space complexity O(n)
 bool check_permutation_with_character_check_v2(std::string original, std::string check_str) {
     if(original.size() != check_str.size()) return false;
 
