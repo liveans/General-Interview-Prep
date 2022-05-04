@@ -1,0 +1,33 @@
+#include <iostream>
+#include <ostream>
+#include <vector>
+
+#define test_iter(x) test_func_iter(x, #x)
+#define test_normal(x) test_func(x, #x)
+
+std::vector<@T> test_data{
+
+};
+
+template <typename Func>
+void test_func_iter(Func func, std::string_view func_name,std::ostream& os = std::cout) {
+    os << func_name << ": ";
+    for(auto item : test_data) {
+        os << func(item.begin(), item.end());
+    }
+    os << '\n';
+}
+
+template <typename Func>
+void test_func(Func func, std::string_view func_name,std::ostream& os = std::cout) {
+    os << func_name << ": ";
+    for(auto item : test_data) {
+        os << func(item);
+    }
+    os << '\n';
+}
+
+int main() {
+    test_iter(@FuncIter1);
+    test_normal(@FuncNormal1);
+}
